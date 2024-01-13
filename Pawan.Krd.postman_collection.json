@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "8592d08e-4b33-4fe5-8b8e-556aa86934c1",
+		"name": "Pawan.Krd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6372209"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Full Name\",\r\n    \"username\": \"userName\",\r\n    \"email\": \"anEmail@pawan.krd\",\r\n    \"password\": \"!234Qwer\",\r\n    \"confirmPassword\": \"!234Qwer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/web/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"web",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"emailOrUsername\": \"userName\",\r\n  \"password\": \"!234Qwer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/web/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"web",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Session",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxN2IyY2RlLTcxNGEtNDBmNy1iOTNmLTlhMDM5ODBhZTgwMyIsImlhdCI6MTcwNTE3MzI0MiwiZXhwIjoxNzA1MTc2ODQyfQ.Cw6l7FT5M_uQxun8-h_oa0RTDhV62ichMyse--SAfNw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/web/auth/session",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"web",
+								"auth",
+								"session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxN2IyY2RlLTcxNGEtNDBmNy1iOTNmLTlhMDM5ODBhZTgwMyIsImlhdCI6MTcwNTE3MzI0MiwiZXhwIjoxNzA1MTc2ODQyfQ.Cw6l7FT5M_uQxun8-h_oa0RTDhV62ichMyse--SAfNw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"verificationCode\": \"484dfa0ffc1bca1f5f251257e3a99be2479f6808b1dbc335e06b702789b5cadac25938ea85f187465fa3afec841a115e91f935dae070f10f3429d931a7655325\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/web/auth/verify",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"web",
+								"auth",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Re-Send Verification Email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxN2IyY2RlLTcxNGEtNDBmNy1iOTNmLTlhMDM5ODBhZTgwMyIsImlhdCI6MTcwNTE3MzI0MiwiZXhwIjoxNzA1MTc2ODQyfQ.Cw6l7FT5M_uQxun8-h_oa0RTDhV62ichMyse--SAfNw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"newEmail@pawan.krd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/web/auth/send-verification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"web",
+								"auth",
+								"send-verification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxN2IyY2RlLTcxNGEtNDBmNy1iOTNmLTlhMDM5ODBhZTgwMyIsImlhdCI6MTcwNTE3MzI0MiwiZXhwIjoxNzA1Nzc4MDQyfQ.nw45PJJ2hyajViEDb56_CvryaOi6SRXfDqXY9UipgL4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/web/auth/refresh",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"web",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "User Keys",
+					"item": [
+						{
+							"name": "Create User Key",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/web/users/me/keys",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"web",
+										"users",
+										"me",
+										"keys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User Key",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"599f3a69-e3b3-48a9-8a22-e16c5abad340\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/web/users/me/keys",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"web",
+										"users",
+										"me",
+										"keys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User Keys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/web/users/me/keys",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"web",
+										"users",
+										"me",
+										"keys"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User Transactions",
+					"item": [
+						{
+							"name": "Get User Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/web/users/me/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"web",
+										"users",
+										"me",
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Full Name\",\r\n    \"username\": \"userName2\",\r\n    \"email\": \"newEmail@pawan.krd\",\r\n    \"password\": \"newPassword123#\",\r\n    \"confirmPassword\": \"newPassword123#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/web/users/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"web",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxN2IyY2RlLTcxNGEtNDBmNy1iOTNmLTlhMDM5ODBhZTgwMyIsImlhdCI6MTcwNTE3MzI0MiwiZXhwIjoxNzA1MTc2ODQyfQ.Cw6l7FT5M_uQxun8-h_oa0RTDhV62ichMyse--SAfNw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://dev-api.pawan.krd",
+			"type": "string"
+		}
+	]
+}
