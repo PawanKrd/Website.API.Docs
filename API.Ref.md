@@ -140,6 +140,8 @@
     - Validation: 1-20 characters long, alphanumeric
   - `email`: String (optional, new email)
     - Validation: Valid email address format `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`
+  - `oldPassword`: String (optional, old password, required if `password` is provided)
+    - Validation: 8-50 characters long, at least one uppercase, one lowercase, one number, and one special character
   - `password`: String (optional, new password)
     - Validation: 8-50 characters long, at least one uppercase, one lowercase, one number, and one special character
   - `confirmPassword`: String (optional, new password confirmation)
